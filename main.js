@@ -4,9 +4,13 @@ const canvas = document.getElementsByTagName("canvas")[0];
 const LNG = -122.4175, LAT = 37.655;
 
 function initCesium() {
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5N2UyMjcwOS00MDY1LTQxYjEtYjZjMy00YTU0ZTg5MmViYWQiLCJpZCI6ODAzMDYsImlhdCI6MTY0Mjc0ODI2MX0.dkwAL1CcljUV7NA7fDbhXXnmyZQU_c-G5zRx8PtEcxE';
+
     const viewer = new Cesium.Viewer('cesiumContainer', {
         terrainProvider: Cesium.createWorldTerrain(),
-        useDefaultRenderLoop: false
+        useDefaultRenderLoop: false,
+        animation: false,
+        timeline: false
     });
 
     viewer.camera.flyTo({
@@ -39,6 +43,17 @@ function initBabylon() {
     material.alpha = 0.5;
     box.material = material;
     box.parent = _this.root_node;
+
+    var utilLayer = new BABYLON.UtilityLayerRenderer(scene);
+    var gizmo = new BABYLON.RotationGizmo(utilLayer);
+    gizmo.attachedMesh = box;
+
+    var gizmo2 = new BABYLON.PositionGizmo(utilLayer);
+    gizmo2.attachedMesh = box;
+
+        // Keep the gizmo fixed to world rotation
+        // gizmo.updateGizmoRotationToMatchAttachedMesh = false;
+        // gizmo.updateGizmoPositionToMatchAttachedMesh = true;
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", {
         width: 100,
