@@ -1,3 +1,11 @@
-https://cesium.com/blog/2017/10/23/integrating-cesium-with-threejs/
+### Cesium.js に Babylon.js の Gizmo をおいてみた。
 
-make something similar with babylonjs according to the passage.
+手抜きなので、参考動画のように、CSS を 開発者ツールできりかえてお試しください。
+
+### Demo
+
+https://hisayan.github.io/cesium-babylonjs/
+
+### 参考動画
+
+https://hisayan.github.io/cesium-babylonjs/cesicum_babylon.mp4
