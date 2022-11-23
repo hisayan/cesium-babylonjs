@@ -8,4 +8,4 @@ https://hisayan.github.io/cesium-babylonjs/
 
 ### 参考動画
 
-https://hisayan.github.io/cesium-babylonjs/cesicum_babylon.mp4
+https://hisayan.github.io/cesium-babylonjs/cesium_babylon.mp4
